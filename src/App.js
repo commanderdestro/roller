@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+
+import { EditText } from 'react-edit-text';
+import 'react-edit-text/dist/index.css';
+
+import Player from './components/Player';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <EditText id='wager-box' className='wager' placeholder='Wager' />
+      <div className='player-container'>
+        <Player className='player' placeholder='Player1' />
+        <Player className='player' placeholder='Player2' />
+      </div>
     </div>
   );
 }

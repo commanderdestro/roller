@@ -1,0 +1,27 @@
+.die{
+    background-color: lightgray;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 5px;
+    border-radius: 5px;
+    line-height: 30px;
+}
+
+.count{
+    margin: 5px;
+}
+
+.percent{
+    margin: 5px;
+}
+
+.stat-line{
+    display: flex;
+    align-items: center;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}

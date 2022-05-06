@@ -1,0 +1,21 @@
+.playerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+.playerName{
+    max-width: 75px;
+    width: 75px;
+    text-align: center;
+    border: none;
+    padding: 2px;
+    height: 30px;
+}
+
+.save{
+    width: 55px;
+    height: 55px;
+}

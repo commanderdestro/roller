@@ -1,0 +1,19 @@
+button {
+  margin: 10px;
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  border: none;
+}
+
+.rolled0 {
+  background-color: lightgray;
+}
+.rolled1 {
+  color: white;
+  background-color: lightblue;
+}
+.rolled2 {
+  color: white;
+  background-color: blue;
+}
