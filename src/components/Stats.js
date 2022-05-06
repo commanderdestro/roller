@@ -8,7 +8,16 @@ const Stats = ({ playerName }) => {
     let count = 0;
     if (rolls && roll === 'doubles') {
       for (let i = 0; i < rolls.length; i++) {
-        if (rolls[i][0] === rolls[i][1]) count += 1;
+        if (rolls[i][0].toString() === rolls[i][1].toString()) count += 1;
+      }
+    } else if (rolls && roll === 'total') {
+      for (let i = 0; i < rolls.length; i++) {
+        count += parseInt(rolls[i][0]);
+        count += parseInt(rolls[i][1]);
+        if (rolls[i][0].toString() === rolls[i][1].toString()) {
+          count += parseInt(rolls[i][0]);
+          count += parseInt(rolls[i][1]);
+        }
       }
     } else if (rolls && roll !== 'doubles') {
       for (let i = 0; i < rolls.length; i++) {
@@ -30,7 +39,8 @@ const Stats = ({ playerName }) => {
   return (
     <>
       <div>{playerName}'s Roll History</div>
-      <StatLine rolls={rolls} countRolls={countRolls} />
+      <StatLine roll='doubles' rolls={rolls} countRolls={countRolls} />
+      <StatLine roll='total' rolls={rolls} countRolls={countRolls} />
       <StatLine roll={['1', '1']} rolls={rolls} countRolls={countRolls} />
       <StatLine roll={['1', '2']} rolls={rolls} countRolls={countRolls} />
       <StatLine roll={['1', '3']} rolls={rolls} countRolls={countRolls} />
