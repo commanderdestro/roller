@@ -1,7 +1,6 @@
 import './Die.css';
 
 const Die = ({ playerName, num, onClick, roll, clear }) => {
-
   let numRoll = 0;
 
   if (roll[0] && roll[0] === num) {

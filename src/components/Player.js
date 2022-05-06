@@ -6,19 +6,30 @@ import './Player.css';
 
 import Die from './Die';
 import Stats from './Stats';
+import Dice from '../assets/dice.svg';
 
 import Lockr from 'lockr';
 
 const Player = ({ placeholder }) => {
   const [roll, setRoll] = useState(['0', '0']);
   const [playerName, setPlayerName] = useState(placeholder);
-
+  
   const handleRoll = dieNum => {
     setRoll(prev => [prev[1], dieNum]);
   };
 
   const handleClear = _ => {
     setRoll(['0', '0']);
+  };
+
+  const handleDiceRoll = _ => {
+    let min1 = Math.ceil(1);
+    let max1 = Math.floor(6);
+    let min2 = Math.ceil(1);
+    let max2 = Math.floor(6);
+    let roll1 = Math.floor(Math.random() * (max1 - min1 + 1)) + min1;
+    let roll2 = Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
+    setRoll([roll1.toString(), roll2.toString()]);
   };
 
   const handlePlayerName = _ => {
@@ -63,6 +74,7 @@ const Player = ({ placeholder }) => {
         <Die playerName={playerName} num='5' onClick={handleRoll} roll={roll} clear={handleClear} />
         <Die playerName={playerName} num='6' onClick={handleRoll} roll={roll} clear={handleClear} />
       </div>
+      <img alt='dice' src={Dice} onClick={handleDiceRoll} style={{ width: '75px' }} />
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         <button id={`${placeholder}save`} className='save' onClick={saveRoll}>
           Save
