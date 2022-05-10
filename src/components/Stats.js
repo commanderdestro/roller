@@ -1,5 +1,6 @@
 import Lockr from 'lockr';
 import StatLine from './StatLine';
+import LastFive from './LastFive';
 
 const Stats = ({ playerName }) => {
   const rolls = Lockr.get(playerName);
@@ -39,6 +40,7 @@ const Stats = ({ playerName }) => {
   return (
     <>
       <div>{playerName}'s Roll History</div>
+      <LastFive rolls={rolls} />
       <StatLine roll='doubles' rolls={rolls} countRolls={countRolls} />
       <StatLine roll='total' rolls={rolls} countRolls={countRolls} />
       <StatLine roll={['1', '1']} rolls={rolls} countRolls={countRolls} />
